@@ -2,24 +2,18 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Coffee Shop - Inicio</title>
+	<title>Ensaladas</title>
 	<link rel="shortcut icon" href="img/CoffeeT.ico" type="image/x-icon">
-	<link rel="stylesheet" href="css/Modal_login-signup.css"> <!-- CSS del Login -->
-	<link rel="stylesheet" href="css/estilos.css">	   <!-- CSS contenido general -->
-	<link rel="stylesheet" href="css/style.css">
-	<meta name="viewport" content="width=debice-width, initial-scale=1.0">
-	<meta name="keywords" content="cafe, coffeshop, coffe, shop, cafelatte, capuchino, refrescos, crepas, snacks, ensaladas"/>
-</head>
+	<link rel="stylesheet" href="css/Modal_login-signup.css">	<!-- CSS del Login -->
+	<link rel="stylesheet" href="css/estilos.css">		<!-- CSS contenido general -->
+	</head>
 <body>
+
 	<section class="title_logo">
 			<a href="index.php">
 				<img class="c_s" src="img/CoffeT.svg" alt="">
 			</a>
-			<h1>Coffee Shop</h1>
-			<div id="iduser">
-				<img id="iconuser" src="img/icon_user_id.svg" alt="">
-				<p class="label_user">Invitado</p>
-			</div>
+			<h1>Ensaladas</h1>
 	</section>
 
 	<div class="search_bar">
@@ -28,18 +22,6 @@
 		<button  class="but_sear"><img class="ser_logo" src="img/search.svg"></button>
 	</div>
 
-
-	<!--<div class="menu_line" onclick="MenuLines(this)">
-  <div class="line1"></div>
-  <div class="line2"></div>
-  <div class="line3"></div>
-</div>
-
-<script>
-function MenuLines(x) {
-  x.classList.toggle("lines_modify");
-}
-</script>-->
 <!--=================INICIO SUPERIOR DERECHA=================-->
 <div class="img_buy">
 		<a href="index.html"><img src="img/buy.svg"></a>
@@ -118,22 +100,11 @@ function MenuLines(x) {
 		</ul>
 	</nav>
 
-	<div class="packages" onclick="location.href='drinks.php'">
-            <img src="img/food.jpg" class="food-pack1" alt="">
-            <h4>PAQUETE 1</h4>
-                <uol class="list_p1">
-                    <li>
-                        1 refresco. 
-                    </li>
-                    <li>
-                        Crepa con jamón, queso machego y chipotle.
-                    </li>
-                </ul>
-        </div>
+	<div>
 
 <!--======================SIGNUP==========================-->
 <div id="signup" class="window_signup">
-<form class="modalc animate" action="php/signup_action.php" method="POST">
+<form class="modalc animate" action="php/signup_action.php" method="post">
 
 <div class="btnexit">
   <span onclick="document.getElementById('signup').style.display='none'" class="finish" title="Close Modal">&times;</span>
@@ -158,7 +129,6 @@ function MenuLines(x) {
   <div class="container-form" style="">
 	  <button type="button" 
 	  onclick="document.getElementById('signup').style.display='none'" class="btn_cancel">Cancel</button>
-	  
   </div>
 </form> 
 </div>
@@ -166,6 +136,7 @@ function MenuLines(x) {
 
 <!--======================LOGIN==========================-->
 <div id="login" class="window_login">
+<form class="modal-content animate" action="#.php" method="post">
 
   <div class="imgcontainer">
   <span onclick="document.getElementById('login').style.display='none'" class="end" title="Close Modal">&times;</span>
@@ -174,9 +145,12 @@ function MenuLines(x) {
 
   <div class="container">
     <label for="uname"><b>Correo</b></label>
+    <input type="text" class="e-mail_login" placeholder="Correo Electrónico" name="uname" required>
 
     <label for="psw"><b>Contraseña</b></label>
+    <input type="password" class="passwd_login" placeholder="Contraseña" name="psw" required>
 
+    <button class="bt_login" type="submit">INGRESAR</button>
     <label>
       <input type="checkbox" name="remember"> Recordar contraseña
     </label>

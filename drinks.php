@@ -2,24 +2,19 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Coffee Shop - Inicio</title>
+	<title>Bebidas</title>
 	<link rel="shortcut icon" href="img/CoffeeT.ico" type="image/x-icon">
 	<link rel="stylesheet" href="css/Modal_login-signup.css"> <!-- CSS del Login -->
 	<link rel="stylesheet" href="css/estilos.css">	   <!-- CSS contenido general -->
-	<link rel="stylesheet" href="css/style.css">
-	<meta name="viewport" content="width=debice-width, initial-scale=1.0">
-	<meta name="keywords" content="cafe, coffeshop, coffe, shop, cafelatte, capuchino, refrescos, crepas, snacks, ensaladas"/>
-</head>
-<body>
+	<link rel="stylesheet" href="css/drinks.css">	   <!-- CSS del Contenido de las Bebidas -->	
+	</head>
+<body id="body">
+
 	<section class="title_logo">
 			<a href="index.php">
-				<img class="c_s" src="img/CoffeT.svg" alt="">
+				<img class="c_s" src="img/CoffeT.svg" >
 			</a>
-			<h1>Coffee Shop</h1>
-			<div id="iduser">
-				<img id="iconuser" src="img/icon_user_id.svg" alt="">
-				<p class="label_user">Invitado</p>
-			</div>
+			<h1>Bebidas</h1>
 	</section>
 
 	<div class="search_bar">
@@ -28,18 +23,6 @@
 		<button  class="but_sear"><img class="ser_logo" src="img/search.svg"></button>
 	</div>
 
-
-	<!--<div class="menu_line" onclick="MenuLines(this)">
-  <div class="line1"></div>
-  <div class="line2"></div>
-  <div class="line3"></div>
-</div>
-
-<script>
-function MenuLines(x) {
-  x.classList.toggle("lines_modify");
-}
-</script>-->
 <!--=================INICIO SUPERIOR DERECHA=================-->
 <div class="img_buy">
 		<a href="index.html"><img src="img/buy.svg"></a>
@@ -63,13 +46,15 @@ function MenuLines(x) {
 		  </button>	
 <!--=========================================-->
 	</div>
+	
+<!--============FIN PARTE SUPERIOR DERECHA=============-->
 
-	<nav class="nav">
-		<ul class="menu">
+	<nav class="nav" id="nav">
+		<ul class="menu" >
 <!--======================BEBIDAS=====================-->
 			<li class="first-item">
 				<a href="drinks.php">
-					<img src="img/Bebidas.jpg" alt="" class="imagen">
+					<img src="img/Bebidas.jpg" class="imagen">
 					<span class="text-item">Bebidas</span>
 					<span class="down-item"></span>
 				</a>
@@ -77,7 +62,7 @@ function MenuLines(x) {
 <!--======================CREPAS=====================-->
 			<li>
 				<a href="crepe.php">
-					<img src="img/Crepas.jpg" alt="" class="imagen">
+					<img src="img/Crepas.jpg" class="imagen">
 					<span class="text-item">Crepas</span>
 					<span class="down-item"></span>
 				</a>
@@ -85,7 +70,7 @@ function MenuLines(x) {
 <!--======================SNACKS=====================-->
 			<li>
 				<a href="snacks.php">
-					<img src="img/Snacks.jpg" alt="" class="imagen">
+					<img src="img/Snacks.jpg" class="imagen">
 					<span class="text-item">Snacks</span>
 					<span class="down-item"></span>
 				</a>
@@ -93,7 +78,7 @@ function MenuLines(x) {
 <!--======================ENSALADAS=====================-->
 			<li>
 				<a href="salads.php">
-					<img src="img/Ensladas.jpg" alt="" class="imagen">
+					<img src="img/Ensladas.jpg" class="imagen">
 					<span class="text-item">Ensaladas</span>
 					<span class="down-item"></span>
 				</a>
@@ -101,7 +86,7 @@ function MenuLines(x) {
 <!--======================POSTRES=====================-->
 			<li>
 				<a href="desserts.php">
-					<img src="img/Postres.jpg" alt="" class="imagen">
+					<img src="img/Postres.jpg" class="imagen">
 					<span class="text-item">Postres</span>
 					<span class="down-item"></span>
 				</a>
@@ -109,31 +94,117 @@ function MenuLines(x) {
 <!--======================CONTACTO=====================-->
 			<li>
 				<a href="contact-us.php">
-					<img src="img/contacto.png" alt="" class="imagen">
+					<img src="img/contacto.png" class="imagen">
 					<span class="text-item">Contactanos</span>
 					<span class="down-item"></span>
 				</a>
 			</li>
-<!--==================================================-->
+		
 		</ul>
 	</nav>
 
-	<div class="packages" onclick="location.href='drinks.php'">
-            <img src="img/food.jpg" class="food-pack1" alt="">
-            <h4>PAQUETE 1</h4>
-                <uol class="list_p1">
-                    <li>
-                        1 refresco. 
-                    </li>
-                    <li>
-                        Crepa con jamón, queso machego y chipotle.
-                    </li>
-                </ul>
-        </div>
+	<?php 
+	/*================================CONEXIÓN_BD================================*/
+	$mysqli = new mysqli('localhost', 'root', '', 'coffeeshop_datas');
+	?>
 
-<!--======================SIGNUP==========================-->
+	<div class="container_drinks">
+	<ul>
+	<li>
+		<img class="coffee_image" src="img/Bebidas/coffee1.jpg" alt="Café Americano">
+		<label  class="l_coffee_a" for="">Café Americano</label>
+		<label class="quantity" for="">Cantidad:</label>
+		<select class="number0" name="numbers0" id="number0">
+		<?php
+		/*===============================CONSULTA_BD===============================*/
+          $query = $mysqli -> query ("SELECT * FROM bebidas");
+          while ($valores = mysqli_fetch_array($query)) {
+            echo '<option value="'.$valores['Id'].'">'.$valores['Amounts'].'</option>';
+          }
+        ?>
+
+		</select>
+	</li>
+
+	<li>
+		<img class="coffee_image" src="img/Bebidas/coffee2.jpg" alt="Café Capuchino">
+		<label  class="l_coffee_a" for="">Café Capuchino</label>
+		<label class="quantity" for="">Cantidad:</label>
+		<select class="number0" name="numbers0" id="number0">
+
+		<?php
+		/*===============================CONSULTA_BD===============================*/
+          $query = $mysqli -> query ("SELECT * FROM bebidas");
+          while ($valores = mysqli_fetch_array($query)) {
+            echo '<option value="'.$valores['Id'].'">'.$valores['Amounts'].'</option>';
+          }
+        ?>
+		
+		</select>
+	</li>
+
+	<li>
+		<img class="coffee_image" src="img/Bebidas/coffee3.jpg" alt="Café Latte">
+		<label  class="l_coffee_a" for="">Café Latte</label>
+		<label class="quantity" for="">Cantidad:</label>
+		<select class="number0" name="numbers0" id="number0">
+
+		<?php
+		/*===============================CONSULTA_BD===============================*/
+          $query = $mysqli -> query ("SELECT * FROM bebidas");
+          while ($valores = mysqli_fetch_array($query)) {
+            echo '<option value="'.$valores['Id'].'">'.$valores['Amounts'].'</option>';
+          }
+        ?>
+		
+		</select>
+	</li>
+
+	<li>
+		<img class="coffee_image" src="img/Bebidas/coffee4.jpg" alt="Moka Frappe">
+		<label  class="l_coffee_a" for="">Moka Frappe</label>
+		<label class="quantity" for="">Cantidad:</label>
+		<select class="number0" name="numbers0" id="number0">
+
+		<?php
+		/*===============================CONSULTA_BD===============================*/
+          $query = $mysqli -> query ("SELECT * FROM bebidas");
+          while ($valores = mysqli_fetch_array($query)) {
+            echo '<option value="'.$valores['Id'].'">'.$valores['Amounts'].'</option>';
+          }
+        ?>
+		
+		</select>
+	</li>
+
+	<li>
+		<img class="coffee_image" src="img/Bebidas/coffee5.jpg" alt="Café Machiato">
+		<label  class="l_coffee_a" for="">Café Machiato</label>
+		<label class="quantity" for="">Cantidad:</label>
+		<select class="number0" name="numbers0" id="number0">
+
+		<?php
+		/*===============================CONSULTA_BD===============================*/
+          $query = $mysqli -> query ("SELECT * FROM bebidas");
+          while ($valores = mysqli_fetch_array($query)) {
+            echo '<option value="'.$valores['Id'].'">'.$valores['Amounts'].'</option>';
+          }
+        ?>
+		
+		</select>
+	</li>
+	</ul>
+	</div>
+	
+	<div id="popUp" class="window_images">
+		<span onclick="document.getElementById('popUp').style.display='none'" class="close">&times;</span>
+		<img class="modalcontent" id="images">
+		<div id="txt"></div>
+	</div>
+
+	<!--======================SIGNUP==========================-->
 <div id="signup" class="window_signup">
-<form class="modalc animate" action="php/signup_action.php" method="POST">
+<form class="modalc animate" action="php/signup_action.php" method="post">
 
 <div class="btnexit">
   <span onclick="document.getElementById('signup').style.display='none'" class="finish" title="Close Modal">&times;</span>
@@ -158,7 +229,6 @@ function MenuLines(x) {
   <div class="container-form" style="">
 	  <button type="button" 
 	  onclick="document.getElementById('signup').style.display='none'" class="btn_cancel">Cancel</button>
-	  
   </div>
 </form> 
 </div>
@@ -166,6 +236,7 @@ function MenuLines(x) {
 
 <!--======================LOGIN==========================-->
 <div id="login" class="window_login">
+<form class="modal-content animate" action="#.php" method="post">
 
   <div class="imgcontainer">
   <span onclick="document.getElementById('login').style.display='none'" class="end" title="Close Modal">&times;</span>
@@ -174,9 +245,12 @@ function MenuLines(x) {
 
   <div class="container">
     <label for="uname"><b>Correo</b></label>
+    <input type="text" class="e-mail_login" placeholder="Correo Electrónico" name="uname" required>
 
     <label for="psw"><b>Contraseña</b></label>
+    <input type="password" class="passwd_login" placeholder="Contraseña" name="psw" required>
 
+    <button class="bt_login" type="submit">INGRESAR</button>
     <label>
       <input type="checkbox" name="remember"> Recordar contraseña
     </label>
@@ -192,5 +266,6 @@ function MenuLines(x) {
 <!--===========================================================-->
 
 <script src="js/efect_login-signup.js"></script>
+<script src="js/efect_img.js"></script>
 </body>
 </html>

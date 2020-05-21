@@ -1,0 +1,253 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.window_login {
+  
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(175, 228, 253, 0.4); /* Black w/ opacity */
+  padding-top: 100px;
+  position: fixed; /* Stay in place */
+  overflow: hidden; /* Enable scroll if needed */
+  display: none; /* Hidden by default */
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;  
+}
+
+/* Modal Content/Box */
+.modal-content {
+  box-shadow: 5px 5px rgb(94, 91, 91);
+  background-color: #fefefe;
+  margin: -3.5% auto 3% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #000;  
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+/* Full-width input fields */
+.name,
+.e-mail, 
+.passwd, 
+.passwd_confirm, 
+.e-mail_login, 
+.passwd_login{
+  border: 1px solid #ccc; 
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 17px;
+  margin: 8px 0;
+  width: 100%; 
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  margin: 24px 0 12px 0;
+  text-align: center;
+  position: relative;
+}
+
+img.avatar {
+  border-radius: 50%;
+  width: 40%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  padding-top: 16px;
+  float: right;
+}
+
+.bt_login {
+  background-color: #4CAF50;
+  letter-spacing: 2px;
+  padding: 14px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 17px;  
+  cursor: pointer;
+  color: white;
+  margin: 8px 0;
+  width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  background-color: #f44336;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  width: auto;  
+}
+
+.bt_login:hover{
+  opacity: 0.8;
+}
+.cancelbtn:hover {
+  opacity: 0.8;
+}
+
+/* The Close Button (x) */
+ .end {
+  position: absolute;
+  font-weight: bold;
+  font-size: 35px;
+  color: #000;
+  right: 25px;
+  top: 0; 
+}
+
+.end:hover,
+.end:focus {
+  text-decoration: none;
+  cursor: pointer;
+  color: red;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+/*=============================SINGUP=============================*/
+
+.window_signup{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(175, 228, 253, 0.4); /* Black w/ opacity */
+  padding-top: 100px;
+  position: fixed; /* Stay in place */
+  overflow: hidden; /* Enable scroll if needed */
+  display: none; /* Hidden by default */
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;  
+}
+
+/* Modal Content/Box */
+.modalc {
+  box-shadow: 5px 5px rgb(94, 91, 91);
+  background-color: #fefefe;
+  margin: -3.5% auto 3% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #000;  
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+/* Center the image and position the close button */
+.btnexit {
+  margin: 10px 0 40px 0;
+  text-align: center;
+  position: relative;
+}
+
+.container-form {
+  padding: 16px;
+}
+
+.bt_signup{
+  background-color: #4CAF50;
+  letter-spacing: 2px;
+  padding: 14px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 17px;  
+  cursor: pointer;
+  color: white;
+  margin: 8px 0;
+  width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.btn_cancel {
+  background-color: #f44336;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  width: auto;  
+}
+
+.bt_signup:hover{
+  opacity: 0.8;
+}
+.btn_cancel:hover {
+  opacity: 0.8;
+}
+
+/* The Close Button (x) */
+ .finish{
+  position: absolute;
+  font-weight: bold;
+  font-size: 35px;
+  color: #000;
+  right: 25px;
+  top: 0; 
+}
+
+.finish:hover,
+.finish:focus {
+  text-decoration: none;
+  cursor: pointer;
+  color: red;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  
+  .btn_cancel {
+     width: 100%;
+  }
+}

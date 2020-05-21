@@ -1,0 +1,110 @@
+ .container_drinks{
+    padding: 120px 0 100px;
+    min-height: 200px;
+    margin: 0 100px;
+    width: 85%;        /*Largo del espacio*/
+ }
+ .container_drinks > ul li{
+    list-style: none;
+    margin: 0 27px;
+    float: left;
+    padding: 0;    
+    width: 15%;         /*Largo de los ITEMS*/
+ }
+
+.coffee_image{
+    display: inline-block;
+    width: 100%;
+}
+
+.coffee_image:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.l_coffee_a{
+    padding: 3px 0 10px 0;
+    display: block;    
+}
+
+.quantity{
+    padding-right: 5px;
+    display: inline;
+}
+
+.number0{
+    box-shadow: 0 2px black;
+    border: 1px solid black;
+    font-weight: normal;
+    border-radius: 5px;
+    display: inline;    
+    color: black;
+    outline: none;
+    padding: 3px;    
+}
+
+/*===========================================*/
+.window_images { 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+    padding-top: 100px; 
+    overflow: hidden; 
+    position: fixed; 
+    display: none; 
+    height: 100%; 
+    width: 100%;
+    z-index: 1; 
+    left: 0;
+    top: 0;  
+}
+
+.modalcontent {
+    max-width: 600px;
+    display: block;
+    margin: auto;    
+    width: 80%;    
+}
+
+#txt{
+    text-align: center;
+    max-width: 700px;
+    font-size: 30px;
+    padding: 20px 0;
+    display: block;
+    color: #fff;
+    height: 150px;
+    margin: auto;
+    width: 80%;       
+}
+
+.modalcontent, #txt { 
+    animation-duration: 0.6s;
+    animation-name: zoom;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close {
+    position: absolute;
+    font-weight: bold;
+    color: #f1f1f1;
+    transition: 0.3s;
+    font-size: 40px;
+    right: 35px;
+    top: 15px;       
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;    
+    cursor: pointer;
+    color: red;
+}
