@@ -166,7 +166,7 @@ function MenuLines(x) {
 
 <!--======================LOGIN==========================-->
 <div id="login" class="window_login">
-<form class="modal-content animate" action="#.php" method="post">
+<form class="modal-content animate" action="php/login.php" method="POST">
 
   <div class="imgcontainer">
   <span onclick="document.getElementById('login').style.display='none'" class="end" title="Close Modal">&times;</span>
@@ -175,12 +175,12 @@ function MenuLines(x) {
 
   <div class="container">
     <label for="uname"><b>Correo</b></label>
-    <input type="text" class="e-mail_login" placeholder="Correo Electrónico" name="uname" required>
+    <input type="text" class="e-mail_login" name="e-mail_login"  placeholder="Correo Electrónico" name="uname" required>
 
     <label for="psw"><b>Contraseña</b></label>
-    <input type="password" class="passwd_login" placeholder="Contraseña" name="psw" required>
+    <input type="password" class="passwd_login" name="passwd_login" placeholder="Contraseña" name="psw" required>
 
-    <button class="bt_login" type="submit">INGRESAR</button>
+    <button class="bt_login" name="sumbit" type="submit">INGRESAR</button>
     <label>
       <input type="checkbox" name="remember"> Recordar contraseña
     </label>
